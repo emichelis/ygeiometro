@@ -7,6 +7,8 @@
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 
     <style>
         /* Βασικές ρυθμίσεις και Φόντο */
@@ -18,7 +20,7 @@
             min-height: 100vh;
             margin: 0;
             background: radial-gradient(circle, #004D40, #00251a);
-            overflow: hidden;
+            overflow: auto;
             color: #ffffff;
         }
 
@@ -32,6 +34,19 @@
             text-align: center;
             border: 2px solid #004D40;
             transition: transform 0.3s ease;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        /* Animation for the card */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         /* Κίνηση για την κάρτα */
@@ -85,12 +100,36 @@
             border-radius: 30px;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             margin-top: 20px;
+            border: 2px solid #004D40;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
         }
 
         /* Κίνηση για το κουμπί όταν γίνεται hover */
         .download-button:hover {
             transform: scale(1.1);
             box-shadow: 0px 8px 16px rgba(255, 235, 59, 0.4);
+        }
+
+        /* Στυλ για το κουμπί ερωτηματολογίου */
+        .survey-button {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: #2196F3;
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1em;
+            border-radius: 30px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-top: 20px;
+            border: 2px solid #1976D2;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Κίνηση για το κουμπί ερωτηματολογίου όταν γίνεται hover */
+        .survey-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0px 8px 16px rgba(33, 150, 243, 0.4);
         }
 
         /* Στυλ για τα ονόματα στο κάτω μέρος της κάρτας */
@@ -106,6 +145,28 @@
             color: #B2DFDB;
             margin-top: 10px;
         }
+
+        /* Εφέ Hover στα ονόματα */
+        .names:hover {
+            color: #FFEB3B;
+            transition: color 0.3s ease;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 400px) {
+            .card {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 1.5em;
+            }
+
+            .download-button, .survey-button {
+                font-size: 0.9em;
+                padding: 10px 20px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -114,10 +175,9 @@
     <div class="card">
         <!-- Εικόνα Λογότυπου με κίνηση -->
         <a href='https://postimg.cc/NyhfFpnC' target='_blank'>
-            <img src='https://i.postimg.cc/NyhfFpnC/logo-color-green.png'  alt='logo-color-green' class="logo"/></a>
+            <img src='https://i.postimg.cc/NyhfFpnC/logo-color-green.png'  alt='logo-color-green' class="logo"/>
+        </a>
         
-        
-
         <!-- Τίτλος Σελίδας -->
         <h1>Καλωσορίσατε στην ψηφιακή έκδοση του Υγειομέτρου</h1>
 
@@ -127,7 +187,16 @@
         </div>
         
         <!-- Κουμπί Κατεβάσματος με κίνηση -->
-        <a href="https://github.com/emichelis/ygeiometro/releases/download/v1.1/app-release-1_1.apk" class="download-button">Κατέβασμα Εφαρμογής</a>
+        <a href="https://github.com/emichelis/ygeiometro/releases/download/v1.1/app-release-1_1.apk" class="download-button" target="_blank">
+            <i class="fas fa-download"></i> Λήψη Εφαρμογής για Android
+        </a>
+
+        <a href="https://emichj.limesurvey.net/652355?lang=el" class="survey-button" target="_blank">
+            <i class="fas fa-question-circle"></i> Ερωτηματολόγιο για iOS
+        </a>
+
+        <!-- Διαχωριστική Γραμμή -->
+        <hr style="border: 1px solid #004D40; margin: 20px 0;">
 
         <!-- Διακριτικά Ονόματα στο κάτω μέρος της κάρτας -->
         <div class="names">
@@ -139,6 +208,11 @@
             <div class="title">Ανάπτυξη εφαρμογής:</div>
             Ευάγγελος Μιχελής Κοτρωνίδης
         </div>
+
+        <!-- Footer -->
+        <footer style="margin-top: 20px; font-size: 0.8em; color: #B2DFDB;">
+            © 2024 Υγειόμετρο - Όλα τα δικαιώματα κατοχυρωμένα.
+        </footer>
     </div>
 
 </body>
