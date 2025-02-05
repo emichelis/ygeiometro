@@ -75,6 +75,25 @@
         .logo:hover {
             transform: scale(1.1);
         }
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-top: 56.25%; /* 16:9 aspect ratio */
+            margin-top: 20px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .video-container iframe,
+        .demo-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+        }
 
         /* Κείμενο Καλωσορίσματος σε Λευκό */
         .welcome-subtext {
@@ -185,7 +204,17 @@
         <div class="welcome-subtext">
             Η νέα αυτή ηλεκτρονική έκδοση του Υγειομέτρου φιλοδοξεί να δώσει στον χρήστη των υπηρεσιών υγείας ένα εύχρηστο εργαλείο, δίνοντάς του τη δυνατότητα να εκτιμήσει την κατάσταση της υγείας του.
         </div>
-        
+       
+        <!-- Βίντεο παρουσίασης (AutoPlay & Mute) -->
+<div class="video-container">
+    <iframe width="100%" height="315" 
+        src="https://www.youtube.com/embed/tXStJpb1vQc?autoplay=1&mute=1" 
+        frameborder="0" allow="autoplay" allowfullscreen>
+    </iframe>
+</div>
+
+
+
         <!-- Κουμπί Κατεβάσματος με κίνηση -->
         <a href="https://github.com/emichelis/ygeiometro/releases/download/v1.3/app-release.apk" class="download-button" target="_blank">
             <i class="fas fa-download"></i> Λήψη Εφαρμογής για Android
@@ -211,7 +240,7 @@
 
         <!-- Footer -->
         <footer style="margin-top: 20px; font-size: 0.8em; color: #B2DFDB;">
-            © 2024 Υγειόμετρο - Όλα τα δικαιώματα κατοχυρωμένα.
+            © 2024 Υγειόμετρο
         </footer>
     </div>
 
